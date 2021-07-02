@@ -13,11 +13,12 @@ def validate_feed(feed: dict):
         dict: masked feed dict
     """
     try:
-        required_feed_keys = ['title','author','subtitle','link','rights', 'updated']
+        required_feed_keys = ['title', 'author',
+                              'subtitle', 'link', 'rights', 'updated']
         if not feed.keys() in required_feed_keys:
             logger.warning('Invalid feed keys')
             return False, 'Invalid feed keys'
-        
+
         cleaned_data = {
             'title': feed['title'],
             'author': feed['author'],

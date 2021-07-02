@@ -13,11 +13,12 @@ def validate_item(item: dict):
         dict: masked item dict
     """
     try:
-        required_item_keys = ['title','author','summary','link','published']
+        required_item_keys = ['title', 'author',
+                              'summary', 'link', 'published']
         if not item.keys() in required_item_keys:
             logger.warning('Invalid item keys')
             return False, 'Invalid item keys'
-        
+
         cleaned_data = {
             'title': item['title'],
             'author': item['author'],
